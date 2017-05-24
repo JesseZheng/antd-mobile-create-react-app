@@ -5,21 +5,18 @@ import { Tabs, Button, WhiteSpace } from 'antd-mobile';
 
 const TabPane = Tabs.TabPane;
 
-
-
-function callback(key) {
-  console.log('onChange', key);
-}
-function handleTabClick(key) {
-  console.log('onTabClick', key);
-}
-
 class App extends Component {
+  callback = (key) => {
+    console.log('onChange', key);
+  };
+  handleTabClick = (key) => {
+    console.log('onTabClick', key);
+  };
   render() {
     return (
       <div className="App">
-            <Tabs defaultActiveKey="2" onChange={callback} onTabClick={handleTabClick}>
-      <TabPane tab="Tabe 1" key="1">
+            <Tabs defaultActiveKey="2" onChange={this.callback} onTabClick={this.handleTabClick}>
+      <TabPane tab="Tab 1" key="1">
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '5rem', backgroundColor: '#fff' }}>
           <Button type="primary"> antd-mobile Rocks! </Button>
         </div>

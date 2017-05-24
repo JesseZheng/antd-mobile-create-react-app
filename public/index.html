@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
     <!--
       manifest.json provides metadata used when your web app is added to the
@@ -38,8 +37,6 @@
     -->
   </body>
   <script>
-  if(!window.Promise) {
-  document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
-}
+   let isMobile = false; if ((/android/i).test(navigator.userAgent) || (/iphone|ipad/i).test(navigator.userAgent)) { const meta = document.querySelector('meta[name="viewport"]'); const content = (meta as any).content; if (!(/initial-scale=1,/g.test(content))) { isMobile = true; } } DPR = isMobile ? (window.devicePixelRatio || 1) : 1, 
   </script>
 </html>

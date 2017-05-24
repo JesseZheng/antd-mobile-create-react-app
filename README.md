@@ -31,7 +31,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - NB: I removed the `''` extension from the example as it would not allow empty values.
 
-- in index html, added script for HD fix:
+- in index html, added script for HD fix (in <head></head>):
 
 ```
 /* é«˜æ¸…æ–¹æ¡ˆè®¾ç½®ä»£ç ï¼Œè¯¦æƒ…è§ https://github.com/ant-design/ant-design-mobile/wiki/antd-mobile-0.8-%E4%BB%A5%E4%B8%8A%E7%89%88%E6%9C%AC%E3%80%8C%E9%AB%98%E6%B8%85%E3%80%8D%E6%96%B9%E6%A1%88%E8%AE%BE%E7%BD%AE */

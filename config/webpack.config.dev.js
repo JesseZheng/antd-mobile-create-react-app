@@ -124,7 +124,7 @@ module.exports = {
           // directory for faster rebuilds.
           cacheDirectory: true,
           plugins: [
-            ['import', { libraryName: 'antd-mobile', style: 'less' }],
+            ["import", { "libraryName": "antd-mobile", "style": "css" }]
           ],
         },
       },

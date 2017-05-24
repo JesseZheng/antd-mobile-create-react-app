@@ -14,7 +14,7 @@ class App extends Component {
   };
   render() {
     return (
-      <div className="App">
+      <div>
             <Tabs defaultActiveKey="2" onChange={this.callback} onTabClick={this.handleTabClick}>
       <TabPane tab="Tab 1" key="1">
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '5rem', backgroundColor: '#fff' }}>

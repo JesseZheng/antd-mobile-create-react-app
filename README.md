@@ -11,9 +11,25 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - run `npm run eject` (NB: This will permanently eject your project- separting your webpack etc. into a config folder)
 
-- go to `config/webpack.config.dev.js` and updat
+- go to `config/webpack.config.dev.js` and update
 
-- remove the '' extension from the example (extensions: ['.web.js', '.js', '.json', '.jsx'])
+- Change the babel section to this:
+	```
+      {
+        test: /\.(js|jsx)$/,
+        include: paths.appSrc,
+        loader: require.resolve('babel-loader'),
+        options: {
+          cacheDirectory: true,
+          plugins: [
+            ["import", { "libraryName": "antd-mobile", "style": "css" }]
+          ],
+        },
+      },
+      ```
+- Then at extensions, add '.web.js', so it looks like so: `extensions: ['.web.js', '.js', '.json', '.jsx']`
+
+- NB: I removed the `''` extension from the example as it would not allow empty values.
 
 OR
 

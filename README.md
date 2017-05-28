@@ -9,6 +9,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## How to add this to your own create-react-app project?
 
+- run `create-react-app projectfolder`
+
+- `npm install babel-plugin-import --save-dev`
+
+- `npm install antd-mobile --save`
+
 - run `npm run eject` (NB: This will permanently eject your project- separting your webpack etc. into a config folder)
 
 - go to `config/webpack.config.dev.js` and update it using the below steps:

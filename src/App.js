@@ -1,27 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import { ListView, Popup, SearchBar,RefreshControl } from 'antd-mobile';
+import {x} from './dummyData'
 
-const data = [
-  {
-    img: 'https://zos.alipayobjects.com/rmsportal/dKbkpPXKfvZzWCM.png',
-    title: 'Meet hotel',
-    des: '不是所有的兼职汪都需要风吹日晒',
-  },
-  {
-    img: 'https://zos.alipayobjects.com/rmsportal/XmwCzSeJiqpkuMB.png',
-    title: 'McDonald\'s invites you',
-    des: '不是所有的兼职汪都需要风吹日晒',
-  },
-  {
-    img: 'https://zos.alipayobjects.com/rmsportal/hfVtzEhPzTUewPm.png',
-    title: 'Eat the week',
-    des: '不是所有的兼职汪都需要风吹日晒',
-  },
-];
-let index = data.length - 1;
-
-let pageIndex = 0;
+let index = x.length - 1;
 
 class App extends React.Component {
   constructor(props) {
@@ -43,7 +25,7 @@ class App extends React.Component {
   }
   onRefresh = () => {
     this.setState({ focused: true }, () => {
-      console.log('Check focus state', this.state.focused)
+      // console.log('Check focus state', this.state.focused)
       Popup.show(      <SearchBar
         placeholder="Auto focus please"
         focused={this.state.focused}
@@ -84,9 +66,9 @@ class App extends React.Component {
     );
     const row = (rowData, sectionID, rowID) => {
       if (index < 0) {
-        index = data.length - 1;
+        index = x.length - 1;
       }
-      const obj = data[index--];
+      const obj = x[index--];
       return (
         <div key={rowID}
           style={{
@@ -95,13 +77,13 @@ class App extends React.Component {
           }}
         >
           <h3 style={{ padding: 2, marginBottom: '0.08rem', borderBottom: '1px solid #F6F6F6' }}>
-            {obj.title}
+            {obj.player1} : {obj.player1score}
           </h3>
-          <div style={{ display: '-webkit-box', display: 'flex' }}>
-            <img style={{ height: '1.28rem', marginRight: '0.08rem' }} src={obj.img} alt="icon" />
+          <div style={{ display: '-webkit-box'}}>
+            <img style={{ height: '1.28rem', marginRight: '0.08rem' }} src="https://s-media-cache-ak0.pinimg.com/originals/54/c3/2f/54c32f4f9f2b6dfd4c7036afac460cda.jpg" alt="icon" />
             <div style={{ display: 'inline-block' }}>
-              <div style={{ margin: '0.1rem 0 0.2rem 0' }}>{obj.des}-{rowData}</div>
-              <div><span style={{ fontSize: '1.6em', color: '#FF6E27' }}>35</span>元/任务</div>
+              <div style={{ margin: '0.1rem 0 0.2rem 0' }}> {obj.player2score}</div>
+              <div><span style={{ fontSize: '1.6em', color: '#FF6E27' }}>{obj.player2}</span>{obj.des}-{rowData}</div>
             </div>
           </div>
         </div>
